@@ -1,0 +1,105 @@
+2016-10-31 19:17:05 INFO  ContextLoader:273 - Root WebApplicationContext: initialization started
+2016-10-31 19:17:06 INFO  XmlWebApplicationContext:495 - Refreshing Root WebApplicationContext: startup date [Mon Oct 31 19:17:06 IST 2016]; root of context hierarchy
+2016-10-31 19:17:06 INFO  XmlBeanDefinitionReader:315 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/root-context.xml]
+2016-10-31 19:17:07 INFO  DefaultListableBeanFactory:557 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@c183a: defining beans []; root of factory hierarchy
+2016-10-31 19:17:07 INFO  ContextLoader:302 - Root WebApplicationContext: initialization completed in 2374 ms
+2016-10-31 19:17:07 INFO  DispatcherServlet:444 - FrameworkServlet 'quesAns': initialization started
+2016-10-31 19:17:07 INFO  XmlWebApplicationContext:495 - Refreshing WebApplicationContext for namespace 'quesAns-servlet': startup date [Mon Oct 31 19:17:07 IST 2016]; parent: Root WebApplicationContext
+2016-10-31 19:17:07 INFO  XmlBeanDefinitionReader:315 - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+2016-10-31 19:17:08 INFO  ClassPathBeanDefinitionScanner:202 - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2016-10-31 19:17:08 INFO  ClassPathBeanDefinitionScanner:210 - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+2016-10-31 19:17:10 INFO  AutowiredAnnotationBeanPostProcessor:139 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-10-31 19:17:10 INFO  DefaultListableBeanFactory:557 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1c4ba56: defining beans [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,adminKeywordController,adminLoginController,adminQuestionController,adminSearchEngineController,answer,questionController,adminKeywordDAOImpl,adminQuestionDAOImpl,questionDaoImpl,searchEngineDAOImpl,keywordServiceImpl,quesAnsServiceImpl,questionServiceImpl,searchEngineServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,myDataSource,sessionFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@c183a
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/KEYAdd],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminKeywordController.addEmployee(com.phd.quesans.dto.SearchKeywordDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/KEYEdit],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminKeywordController.editEmployee(com.phd.quesans.dto.SearchKeywordDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/KEYDelete],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminKeywordController.deleteEmployee(com.phd.quesans.dto.SearchKeywordDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/KEYSave],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminKeywordController.saveEmployee(com.phd.quesans.dto.SearchKeywordDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/KEYIndex],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminKeywordController.welcome()
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/admin],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminLoginController.displayLogin(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/logout],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminLoginController.getLogout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/admin],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminLoginController.executeLogin(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession,com.phd.quesans.dto.LoginBeanDTO)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/QUESAdd],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminQuestionController.addEmployee(com.phd.quesans.dto.QuestionDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/QUESEdit],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminQuestionController.editEmployee(com.phd.quesans.dto.QuestionDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/QUESDelete],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminQuestionController.deleteEmployee(com.phd.quesans.dto.QuestionDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/QUESSave],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminQuestionController.saveEmployee(com.phd.quesans.dto.QuestionDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/QUESIndex],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminQuestionController.welcome()
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/SEAdd],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminSearchEngineController.addEmployee(com.phd.quesans.dto.SearchEngineDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/SEEdit],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminSearchEngineController.editEmployee(com.phd.quesans.dto.SearchEngineDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/SEDelete],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminSearchEngineController.deleteEmployee(com.phd.quesans.dto.SearchEngineDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/SESave],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminSearchEngineController.saveEmployee(com.phd.quesans.dto.SearchEngineDTO,org.springframework.validation.BindingResult)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/SEIndex],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.phd.quesans.controller.AdminSearchEngineController.welcome()
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/RequestQuestion],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.phd.quesans.controller.Answer.processQuestionRequest(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/RequestQuestion],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.phd.quesans.controller.Answer.processQuestionGetRequest(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.phd.quesans.controller.QuestionController.home(java.util.Locale,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2016-10-31 19:17:11 INFO  RequestMappingHandlerMapping:190 - Mapped "{[/getMachedQuestion],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.phd.quesans.controller.QuestionController.getMachedNames(java.lang.String)
+2016-10-31 19:17:12 INFO  SimpleUrlHandlerMapping:314 - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-10-31 19:17:14 INFO  Version:37 - Hibernate Commons Annotations 3.2.0.Final
+2016-10-31 19:17:14 INFO  Environment:603 - Hibernate 3.6.9.Final
+2016-10-31 19:17:14 INFO  Environment:636 - hibernate.properties not found
+2016-10-31 19:17:14 INFO  Environment:814 - Bytecode provider name : javassist
+2016-10-31 19:17:14 INFO  Environment:695 - using JDK 1.4 java.sql.Timestamp handling
+2016-10-31 19:17:16 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.phd.quesans.dto.QuestionDTO
+2016-10-31 19:17:16 INFO  EntityBinder:530 - Bind entity com.phd.quesans.dto.QuestionDTO on table quesans
+2016-10-31 19:17:17 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.phd.quesans.dto.SearchEngineDTO
+2016-10-31 19:17:17 INFO  EntityBinder:530 - Bind entity com.phd.quesans.dto.SearchEngineDTO on table searchengine
+2016-10-31 19:17:17 INFO  AnnotationBinder:532 - Binding entity from annotated class: com.phd.quesans.dto.SearchKeywordDTO
+2016-10-31 19:17:17 INFO  EntityBinder:530 - Bind entity com.phd.quesans.dto.SearchKeywordDTO on table SearchKeyword
+2016-10-31 19:17:17 INFO  Configuration:1676 - Hibernate Validator not found: ignoring
+2016-10-31 19:17:17 INFO  AnnotationSessionFactoryBean:777 - Building new Hibernate SessionFactory
+2016-10-31 19:17:17 INFO  HibernateSearchEventListenerRegister:75 - Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2016-10-31 19:17:17 INFO  ConnectionProviderFactory:173 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+2016-10-31 19:17:18 INFO  Dialect:135 - Using dialect: org.hibernate.dialect.MySQLDialect
+2016-10-31 19:17:19 INFO  JdbcSupportLoader:79 - Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2016-10-31 19:17:19 INFO  SettingsFactory:126 - Database ->
+       name : MySQL
+    version : 5.5.50
+      major : 5
+      minor : 5
+2016-10-31 19:17:19 INFO  SettingsFactory:132 - Driver ->
+       name : MySQL-AB JDBC Driver
+    version : mysql-connector-java-5.1.9 ( Revision: ${svn.Revision} )
+      major : 5
+      minor : 1
+2016-10-31 19:17:19 INFO  TransactionFactoryFactory:65 - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2016-10-31 19:17:19 INFO  TransactionManagerLookupFactory:83 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2016-10-31 19:17:19 INFO  SettingsFactory:179 - Automatic flush during beforeCompletion(): disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:183 - Automatic session close at end of transaction: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:190 - JDBC batch size: 15
+2016-10-31 19:17:19 INFO  SettingsFactory:193 - JDBC batch updates for versioned data: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:198 - Scrollable result sets: enabled
+2016-10-31 19:17:19 INFO  SettingsFactory:206 - JDBC3 getGeneratedKeys(): enabled
+2016-10-31 19:17:19 INFO  SettingsFactory:214 - Connection release mode: auto
+2016-10-31 19:17:19 INFO  SettingsFactory:238 - Maximum outer join fetch depth: 2
+2016-10-31 19:17:19 INFO  SettingsFactory:241 - Default batch fetch size: 1
+2016-10-31 19:17:19 INFO  SettingsFactory:245 - Generate SQL with comments: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:249 - Order SQL updates by primary key: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:253 - Order SQL inserts for batching: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:431 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2016-10-31 19:17:19 INFO  ASTQueryTranslatorFactory:47 - Using ASTQueryTranslatorFactory
+2016-10-31 19:17:19 INFO  SettingsFactory:261 - Query language substitutions: {}
+2016-10-31 19:17:19 INFO  SettingsFactory:266 - JPA-QL strict compliance: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:271 - Second-level cache: enabled
+2016-10-31 19:17:19 INFO  SettingsFactory:275 - Query cache: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:406 - Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2016-10-31 19:17:19 INFO  SettingsFactory:285 - Optimize cache for minimal puts: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:294 - Structured second-level cache entries: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:314 - Echoing all SQL to stdout
+2016-10-31 19:17:19 INFO  SettingsFactory:323 - Statistics: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:327 - Deleted entity synthetic identifier rollback: disabled
+2016-10-31 19:17:19 INFO  SettingsFactory:343 - Default entity-mode: pojo
+2016-10-31 19:17:19 INFO  SettingsFactory:347 - Named query checking : enabled
+2016-10-31 19:17:19 INFO  SettingsFactory:351 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2016-10-31 19:17:19 INFO  SessionFactoryImpl:202 - building session factory
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [clob] overrides previous : org.hibernate.type.ClobType@808ec
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [java.sql.Clob] overrides previous : org.hibernate.type.ClobType@808ec
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [characters_clob] overrides previous : org.hibernate.type.PrimitiveCharacterArrayClobType@631a62
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [wrapper_characters_clob] overrides previous : org.hibernate.type.CharacterArrayClobType@454c30
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [materialized_clob] overrides previous : org.hibernate.type.MaterializedClobType@1743635
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [blob] overrides previous : org.hibernate.type.BlobType@f0456e
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [java.sql.Blob] overrides previous : org.hibernate.type.BlobType@f0456e
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [materialized_blob] overrides previous : org.hibernate.type.MaterializedBlobType@22b98a
+2016-10-31 19:17:19 INFO  BasicTypeRegistry:150 - Type registration [wrapper_materialized_blob] overrides previous : org.hibernate.type.WrappedMaterializedBlobType@69be78
+2016-10-31 19:17:21 INFO  SessionFactoryObjectFactory:105 - Not binding factory to JNDI, no JNDI name configured
+2016-10-31 19:17:21 INFO  HibernateTransactionManager:415 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@9b15a] of Hibernate SessionFactory for HibernateTransactionManager
+2016-10-31 19:17:21 INFO  DispatcherServlet:463 - FrameworkServlet 'quesAns': initialization completed in 13905 ms
+2016-10-31 19:18:10 INFO  QuestionController:47 - Welcome QuesAns! The client locale is en_US.
