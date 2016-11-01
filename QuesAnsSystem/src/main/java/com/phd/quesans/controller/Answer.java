@@ -114,8 +114,8 @@ public class Answer {
 							new InputStreamReader(new URL("http://agentgatech.appspot.com").openStream())).readLine();
 					// IP = InetAddress.getLocalHost();
 					// System.out.println("My system IP :" + IP);
-					String googleOutput = (String) webpageCrawer.getDocument(
-							"https://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + keyword + "&userip=" + IP);
+					String googleOutput ="";
+					// webpageCrawer.getDocument("https://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + keyword + "&userip=" + IP).toString();
 							//.html();
 					// System.out.println("google URL :" +
 					// "https://ajax.googleapis.com/ajax/services/search/web?v=1.0&q="
