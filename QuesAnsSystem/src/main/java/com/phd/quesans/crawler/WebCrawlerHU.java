@@ -2,7 +2,6 @@ package com.phd.quesans.crawler;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
@@ -22,6 +21,7 @@ public class WebCrawlerHU {
 	private static final String DOMAIN = "HCLTECH";
 
 	public static WebClient getWebConnection() {
+		@SuppressWarnings("deprecation")
 		WebClient webClient = new WebClient(BrowserVersion.FIREFOX_38, PROXY_HOST, PROXY_PORT);
 		DefaultCredentialsProvider cp = (DefaultCredentialsProvider) webClient.getCredentialsProvider();
 		cp.addNTLMCredentials(USERNAME, PASSWORD, PROXY_HOST, PROXY_PORT, null, DOMAIN);
@@ -38,8 +38,6 @@ public class WebCrawlerHU {
 			String content = response.getContentAsString();
 			return content;
 		} catch (FailingHttpStatusCodeException | IOException e) {
-			// TODO Auto-generated catch block
-			// e.printStackTrace();
 			System.out.println("Content based Exception occured" + e.getMessage());
 			return "Page Crawling is Failed. Please Contact Administrator";
 		}
@@ -61,7 +59,6 @@ public class WebCrawlerHU {
 		try {
 			WebClient webClient = WebCrawlerHU.getWebConnection();
 			final HtmlPage page = webClient.getPage(URL);
-			String pageAsXml = page.asXml();
 			HtmlDivision div = (HtmlDivision) page.getByXPath("//" + tag + "[@class='" + className + "']").get(0);
 			return div.asXml();
 		} catch (Exception e) {
@@ -70,23 +67,38 @@ public class WebCrawlerHU {
 		}
 	}
 
+	public String getGoogleResult(String URL,String tag, String className) {
+		try {
+			WebCrawlerHU webCrawlerHU = new WebCrawlerHU();
+			String divResultContent = webCrawlerHU
+					.getContentByClass(URL, tag, className);
+			return divResultContent;
+		} catch (Exception e) {
+			System.out.println("Error while fetching Google content" + e.getMessage());
+			return "Page Crawling is failed. Please contact administrator";
+		}
+	}
+	public String getWikipediaResult(String URL,String tag, String className) {
+		try {
+			WebCrawlerHU webCrawlerHU = new WebCrawlerHU();
+			String divResultContent = webCrawlerHU
+					.getContentByClass(URL, tag, className);
+			return divResultContent;
+		} catch (Exception e) {
+			System.out.println("Error while fetching Wiki content" + e.getMessage());
+			return "Page Crawling is failed. Please contact administrator";
+		}
+	}
 	@SuppressWarnings("deprecation")
 	public static void main(String args[]) {
 		try {
 			WebCrawlerHU webCrawlerHU = new WebCrawlerHU();
-			String content = webCrawlerHU.getPageContent("http://www.google.co.in/search?q=Father of Facebook");
-			String divContent = webCrawlerHU.getContentById("http://www.google.co.in/search?q=Father of Facebook",
-					"navcnt");
-			String divResultContent = webCrawlerHU
-					.getContentByClass("http://www.google.co.in/search?q=Father of Facebook", "div", "_OKe");
-			FileUtils.writeStringToFile(new File("content.html"), content);
-			FileUtils.writeStringToFile(new File("divContentt.html"), divContent);
-			FileUtils.writeStringToFile(new File("divResultContent.html"), divResultContent);
-			System.out.println("File has bee updated");
+			File google=new File("google.html");
+			File wiki=new File("wiki.html");
+			FileUtils.writeStringToFile(google, webCrawlerHU.getGoogleResult("http://www.google.co.in/search?q=Father of Facebook","div","_RBg"));
+			FileUtils.writeStringToFile(wiki, webCrawlerHU.getWikipediaResult("https://en.wikipedia.org/wiki/Larry_Page","div","mw-body-content"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println("Exception occured" + e.getMessage());
 		}
-
 	}
 }
