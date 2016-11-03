@@ -49,7 +49,16 @@ public class WebSearchEngine {
 			return "Page Crawling is failed. Please contact administrator";
 		}
 	}
-
+	public String getDuckDuckGoResult(String URL, String tag, String className) {
+		try {
+			webCrawlerHU = new WebCrawlerHU();
+			String divResultContent = webCrawlerHU.getContentByClass(URL, tag, className);
+			return divResultContent;
+		} catch (Exception e) {
+			System.out.println("Error while fetching Bing content" + e.getMessage());
+			return "Page Crawling is failed. Please contact administrator";
+		}
+	}
 	@SuppressWarnings("deprecation")
 	public static void main(String args[]) {
 		try {
@@ -58,6 +67,7 @@ public class WebSearchEngine {
 			File wiki = new File("wiki.html");
 			File bing = new File("bing.html");
 			File yahoo = new File("yahoo.html");
+			File duck=new File("duck.html");
 			FileUtils.writeStringToFile(google,
 					webSearchEngine.getGoogleResult("http://www.google.co.in/search?q=Father of Facebook", "div", "_RBg"));
 			System.out.println("Google Completed");
@@ -69,7 +79,9 @@ public class WebSearchEngine {
 			System.out.println("Bing Completed");
 			FileUtils.writeStringToFile(yahoo,
 					webSearchEngine.getYahooResult("http://search.yahoo.com/search?p=Mark+Zuckerberg", "div", "right"));
-			System.out.println("Yahoo Completed");
+			FileUtils.writeStringToFile(duck,
+					webSearchEngine.getDuckDuckGoResult("http://duckduckgo.com/?q=larry+page", "div", "js-sidebar-modules"));
+			System.out.println("DuckDuckGo Completed");
 		} catch (Exception e) {
 			System.out.println("Exception occured" + e.getMessage());
 		}
