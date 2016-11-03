@@ -67,38 +67,17 @@ public class WebCrawlerHU {
 		}
 	}
 
-	public String getGoogleResult(String URL,String tag, String className) {
+	public String getContentByTagId(String URL, String tag, String elementId) throws Exception {
 		try {
-			WebCrawlerHU webCrawlerHU = new WebCrawlerHU();
-			String divResultContent = webCrawlerHU
-					.getContentByClass(URL, tag, className);
-			return divResultContent;
+			WebClient webClient = WebCrawlerHU.getWebConnection();
+			final HtmlPage page = webClient.getPage(URL);
+			HtmlDivision div = (HtmlDivision) page.getByXPath("//" + tag + "[@id='" + elementId + "']").get(0);
+			return div.asXml();
 		} catch (Exception e) {
-			System.out.println("Error while fetching Google content" + e.getMessage());
-			return "Page Crawling is failed. Please contact administrator";
+			System.out.println("Class based exception occured" + e.getMessage());
+			return "Page Crawling is Failed. Please Contact Administrator";
 		}
 	}
-	public String getWikipediaResult(String URL,String tag, String className) {
-		try {
-			WebCrawlerHU webCrawlerHU = new WebCrawlerHU();
-			String divResultContent = webCrawlerHU
-					.getContentByClass(URL, tag, className);
-			return divResultContent;
-		} catch (Exception e) {
-			System.out.println("Error while fetching Wiki content" + e.getMessage());
-			return "Page Crawling is failed. Please contact administrator";
-		}
-	}
-	@SuppressWarnings("deprecation")
-	public static void main(String args[]) {
-		try {
-			WebCrawlerHU webCrawlerHU = new WebCrawlerHU();
-			File google=new File("google.html");
-			File wiki=new File("wiki.html");
-			FileUtils.writeStringToFile(google, webCrawlerHU.getGoogleResult("http://www.google.co.in/search?q=Father of Facebook","div","_RBg"));
-			FileUtils.writeStringToFile(wiki, webCrawlerHU.getWikipediaResult("https://en.wikipedia.org/wiki/Larry_Page","div","mw-body-content"));
-		} catch (Exception e) {
-			System.out.println("Exception occured" + e.getMessage());
-		}
-	}
+
+	
 }
