@@ -20,7 +20,7 @@ public class WebCrawlerHU {
 	private static final String PASSWORD = "Sv25081985";
 	private static final String DOMAIN = "HCLTECH";
 
-	public static WebClient getWebConnection() {
+	public static WebClient getProxyWebConnection() {
 		@SuppressWarnings("deprecation")
 		WebClient webClient = new WebClient(BrowserVersion.FIREFOX_38, PROXY_HOST, PROXY_PORT);
 		DefaultCredentialsProvider cp = (DefaultCredentialsProvider) webClient.getCredentialsProvider();
@@ -28,7 +28,12 @@ public class WebCrawlerHU {
 		webClient.getOptions().setThrowExceptionOnScriptError(false);
 		return (webClient);
 	}
-
+	public static WebClient getWebConnection() {
+		@SuppressWarnings("deprecation")
+		WebClient webClient = new WebClient(BrowserVersion.FIREFOX_38);
+		webClient.getOptions().setThrowExceptionOnScriptError(false);
+		return (webClient);
+	}
 	public String getPageContent(String URL) {
 		WebClient webClient = WebCrawlerHU.getWebConnection();
 		HtmlPage currentPage;
